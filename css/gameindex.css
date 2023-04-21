@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
+
 p,h1 {
   color: white;
   font-family: Roboto;
@@ -18,4 +20,10 @@ button {
   font-size: 16px;
   cursor: pointer;
   border-radius: 12px;
+  font-family: 'Black Han Sans';
 }
+
+b {
+  font-family: 'Black Han Sans'
+}
+
