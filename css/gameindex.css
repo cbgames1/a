@@ -4,5 +4,6 @@ p,h1 {
 }
 
 .author {
-  text-align: right
+  text-align: right;
+  font-size: 7px;
 }
