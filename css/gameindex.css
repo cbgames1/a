@@ -5,9 +5,18 @@ p,h1 {
   font-family: Roboto;
 }
 
+h1 {
+  font-size: 40px;
+}
+
+p {
+  font-size: 15px;
+}
+
 .author {
   text-align: right;
-  font-size: 7px;
+  font-size: 8px;
+  font-family: Roboto;
 }
 
 button {
@@ -24,6 +33,6 @@ button {
 }
 
 b {
+  font-size: 30px;
   font-family: 'Black Han Sans'
 }
-
