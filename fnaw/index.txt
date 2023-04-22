@@ -1,0 +1,29 @@
+<html>
+  <head>
+    <title>CBgames | FNAW</title>
+    <link rel="icon" type="img/jpg" href="icon.jpg">
+    <link rel="stylesheet" href="../css/gameindex.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <style>
+      body {
+        background-image: url('fnaw.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      p,h1 {
+        color: white
+      }
+    </style>
+  </head>
+  
+  <body>
+    <p class="author">lax1dude</p>
+    <img src="thumbnail.jpg" height="190" width="320">
+    <h1>Five Nights At Winston's</h1>
+    <a href="game"><button class="play"><b>PLAY</b></button></a>
+    <a href="howto"><button class="other">HOW-TO</button></a>
+    <p class="author">&nbsp</p>
+    <p>A FNAF fangame made by lax1dude.</p>
+  </body>
+</html>
+    
