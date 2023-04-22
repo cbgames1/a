@@ -18,8 +18,21 @@ p {
   font-family: Roboto;
 }
 
-button {
+.play {
   background-color: #5eff5eff;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 12px;
+  font-family: 'Black Han Sans';
+}
+
+.other {
+  background-color: #0D1117;
   border: none;
   color: white;
   padding: 15px 32px;
