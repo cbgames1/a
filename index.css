@@ -1,0 +1,125 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.centerthediv {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+border: 0px solid #FFFF00;
+padding: 10px;
+}
+.column {
+  float: left;
+  width: 25%;
+  padding: 0 10px;
+}
+
+.row {margin: auto;}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  padding: 16px;
+  text-align: center;
+  background-color: #f1f1f1;
+}
+.author {
+  font-size: 10px;
+  font-weight: bold;
+}
+
+ hr.rounded {
+  border-top: 8px solid #bbb;
+  border-radius: 5px;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.DC {
+  text-align: center;  
+  font-size: 10px;
+}
+
+.centerthediv {
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+  border: 0px solid #FFFF00;
+  padding: 10px;
+}
+
+.centerimg {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+p {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h3 {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {margin: 0;}
+
+ul.topnav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+ul.topnav li {float: left;}
+
+ul.topnav li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+ul.topnav li a:hover:not(.active) {background-color: #111;}
+
+ul.topnav li a.active {background-color: #04AA6D;}
+
+ul.topnav li.right {float: right;}
+
+@media screen and (max-width: 600px) {
+  ul.topnav li.right, 
+  ul.topnav li {float: none;}
+}
