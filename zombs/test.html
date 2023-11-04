@@ -1,63 +1,50 @@
 <!DOCTYPE html>
 <html>
-  <head>
+<head>
     <title>CBgames | Game-Game</title>
     <link rel="icon" type="img/jpg" href="icon.jpg">
     <link rel="stylesheet" href="../css/gameindex.css">
     <style>
-      body {
-        background-image: url('zombs.png');
-        background-size: cover;
-        background-repeat: no-repeat;
-      }
-      p,h1 {
-        color: black;
-      }
-    </style>
-  </head>
+        body {
+            background-image: url('zombs.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
 
-  <body>
-    <p class="author">End Game</p>
-    <img src="thumbnails.avif" height="190" width="320">
-    <h1>Zombs Royale</h1>
-    <a href="game"><button class="play"><b>PLAY</b></button></a>
+        p, h1 {
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
     <button class="party" onclick="embedGame()"><b>PARTY</b></button>
-    <p class="author">&nbsp</p>
-    <p>A fun battle royale game.</p>
-    <p></p>
-    <p></p>
 
     <style id="custom-css"></style>
 
     <script>
-      function embedGame() {
-          var code = prompt("Enter match code:");
+        function embedGame() {
+            var code = prompt("Enter match code:");
 
-          if (code) {
-              var css = `
-                  body {
-                      background-image: url('zombs.png');
-                      background-size: cover;
-                      background-repeat: no-repeat;
-                  }
+            if (code) {
+                var css = `
+                    body {
+                        display: none;
+                    }
+                `;
 
-                  p, h1 {
-                      color: black;
-                  }
-              `;
+                var styleElement = document.getElementById("custom-css");
+                styleElement.textContent = css;
 
-              var styleElement = document.getElementById("custom-css");
-              styleElement.textContent = css;
-
-              var iframe = document.createElement("iframe");
-              iframe.src = "https://zombsroyale.io/party/" + code;
-              iframe.width = "800";
-              iframe.height = "600";
-              iframe.className = "embedlol";
-              document.body.appendChild(iframe);
-          }
-      }
+                var iframe = document.createElement("iframe");
+                iframe.src = "https://zombsroyale.io/party/" + code;
+                iframe.width = "99%";
+                iframe.height = "98.5%";
+                iframe.frameBorder = "0";
+                iframe.className = "embedlol";
+                document.body.appendChild(iframe);
+            }
+        }
     </script>
-
-  </body>
+</body>
 </html>
