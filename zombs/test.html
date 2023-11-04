@@ -15,6 +15,10 @@
             color: black;
         }
 
+        .embed-container {
+            display: none;
+        }
+
         .embedlol {
             border: none;
             width: 99%;
@@ -34,6 +38,8 @@
     <p></p>
     <p></p>
 
+    <div class="embed-container" id="embed-container"></div>
+
     <script>
         function embedGame() {
             var code = prompt("Enter match code:");
@@ -49,13 +55,16 @@
                 styleElement.textContent = css;
                 document.head.appendChild(styleElement);
 
+                var embedContainer = document.getElementById("embed-container");
+
                 var iframe = document.createElement("iframe");
                 iframe.src = "https://zombsroyale.io/party/" + code;
                 iframe.className = "embedlol";
                 iframe.frameBorder = "0";
 
-                document.body.innerHTML = '';
-                document.body.appendChild(iframe);
+                embedContainer.innerHTML = '';
+                embedContainer.appendChild(iframe);
+                embedContainer.style.display = 'block';
             }
         }
     </script>
