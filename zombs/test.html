@@ -11,10 +11,6 @@
             background-repeat: no-repeat;
         }
 
-        p, h1 {
-            color: black;
-        }
-
         .embed-container {
             display: none;
             position: absolute;
@@ -28,15 +24,17 @@
 </head>
 
 <body>
-    <p class="author">End Game</p>
-    <img src="thumbnails.avif" height="190" width="320">
-    <h1>Zombs Royale</h1>
-    <a href="game"><button class="play"><b>PLAY</b></button></a>
-    <button class="party" onclick="showIframe()"><b>PARTY</b></button>
-    <p class="author">&nbsp</p>
-    <p>A fun battle royale game.</p>
-    <p></p>
-    <p></p>
+    <div id="main-content">
+        <p class="author">End Game</p>
+        <img src="thumbnails.avif" height="190" width="320">
+        <h1>Zombs Royale</h1>
+        <a href="game"><button class="play"><b>PLAY</b></button></a>
+        <button class="party" onclick="showIframe()"><b>PARTY</b></button>
+        <p class="author">&nbsp</p>
+        <p>A fun battle royale game.</p>
+        <p></p>
+        <p></p>
+    </div>
 
     <div class="embed-container" id="embed-container">
         <iframe class="embedlol" id="game-iframe" src=""></iframe>
@@ -52,6 +50,9 @@
 
                 var embedContainer = document.getElementById("embed-container");
                 embedContainer.style.display = 'block';
+
+                var mainContent = document.getElementById("main-content");
+                mainContent.style.display = 'none';
             }
         }
     </script>
