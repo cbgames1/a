@@ -14,13 +14,23 @@
         p, h1 {
             color: black;
         }
+
+        .embedlol {
+            border: none;
+        }
     </style>
 </head>
 
 <body>
+    <p class="author">End Game</p>
+    <img src="thumbnails.avif" height="190" width="320">
+    <h1>Zombs Royale</h1>
+    <a href="game"><button class="play"><b>PLAY</b></button></a>
     <button class="party" onclick="embedGame()"><b>PARTY</b></button>
-
-    <style id="custom-css"></style>
+    <p class="author">&nbsp</p>
+    <p>A fun battle royale game.</p>
+    <p></p>
+    <p></p>
 
     <script>
         function embedGame() {
@@ -33,8 +43,9 @@
                     }
                 `;
 
-                var styleElement = document.getElementById("custom-css");
+                var styleElement = document.createElement("style");
                 styleElement.textContent = css;
+                document.head.appendChild(styleElement);
 
                 var iframe = document.createElement("iframe");
                 iframe.src = "https://zombsroyale.io/party/" + code;
@@ -42,6 +53,7 @@
                 iframe.height = "98.5%";
                 iframe.frameBorder = "0";
                 iframe.className = "embedlol";
+                document.body.innerHTML = '';
                 document.body.appendChild(iframe);
             }
         }
