@@ -17,12 +17,12 @@
 
         .embed-container {
             display: none;
-        }
-
-        .embedlol {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             border: none;
-            width: 99%;
-            height: 98.5%;
         }
     </style>
 </head>
@@ -32,38 +32,25 @@
     <img src="thumbnails.avif" height="190" width="320">
     <h1>Zombs Royale</h1>
     <a href="game"><button class="play"><b>PLAY</b></button></a>
-    <button class="party" onclick="embedGame()"><b>PARTY</b></button>
+    <button class="party" onclick="showIframe()"><b>PARTY</b></button>
     <p class="author">&nbsp</p>
     <p>A fun battle royale game.</p>
     <p></p>
     <p></p>
 
-    <div class="embed-container" id="embed-container"></div>
+    <div class="embed-container" id="embed-container">
+        <iframe class="embedlol" id="game-iframe" src=""></iframe>
+    </div>
 
     <script>
-        function embedGame() {
+        function showIframe() {
             var code = prompt("Enter match code:");
 
             if (code) {
-                var css = `
-                    body {
-                        display: none;
-                    }
-                `;
-
-                var styleElement = document.createElement("style");
-                styleElement.textContent = css;
-                document.head.appendChild(styleElement);
+                var iframe = document.getElementById("game-iframe");
+                iframe.src = "https://zombsroyale.io/party/" + code;
 
                 var embedContainer = document.getElementById("embed-container");
-
-                var iframe = document.createElement("iframe");
-                iframe.src = "https://zombsroyale.io/party/" + code;
-                iframe.className = "embedlol";
-                iframe.frameBorder = "0";
-
-                embedContainer.innerHTML = '';
-                embedContainer.appendChild(iframe);
                 embedContainer.style.display = 'block';
             }
         }
