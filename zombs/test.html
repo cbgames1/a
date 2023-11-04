@@ -47,14 +47,14 @@
                 styleElement.textContent = css;
                 document.head.appendChild(styleElement);
 
-                document.body.innerHTML = '';
-
                 var iframe = document.createElement("iframe");
                 iframe.src = "https://zombsroyale.io/party/" + code;
                 iframe.width = "99%";
                 iframe.height = "98.5%";
                 iframe.frameBorder = "0";
                 iframe.className = "embedlol";
+
+                document.body.innerHTML = '';
                 document.body.appendChild(iframe);
             }
         }
