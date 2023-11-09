@@ -54,7 +54,7 @@
     <div class="center">
       <img src="index.png">
       <button class="floating-button"><a href="updates" class="white">Updates</a></button>
-      <a href="wordle.html"><p>I just can't believe they blocked Wordle... - Darby</p></a>
+      <p id="random-splash"></p>
       &nbsp
     </div>
     &nbsp
@@ -106,5 +106,18 @@
       </a>
       <div class="desc"><p>Retro Bowl</p></div>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('splash.txt')
+                .then(response => response.text())
+                .then(data => {
+                    const lines = data.split('\n');
+                    const randomLine = lines[Math.floor(Math.random() * lines.length)];
+                    const randomSplashElement = document.getElementById('random-splash');
+                    randomSplashElement.textContent = randomLine;
+                })
+                .catch(error => console.error('Error fetching splash.txt:', error));
+        });
+    </script>
   </body>
 </html>
