@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suggestion Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            max-width: 400px;
+            margin: auto;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+        }
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 12px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<form id="suggestionForm">
+    <label for="name">Name <span style="color: gray;">*</span></label>
+    <input type="text" id="name" name="name">
+
+    <label for="game">Game <span style="color: red;">*</span></label>
+    <input type="text" id="game" name="game" required>
+
+    <label for="link">Link <span style="color: gray;">*</span></label>
+    <input type="url" id="link" name="link">
+
+    <button type="button" onclick="saveSuggestion()">Submit</button>
+</form>
+
+<script>
+    function saveSuggestion() {
+        // Get form values
+        var name = document.getElementById('name').value;
+        var game = document.getElementById('game').value;
+        var link = document.getElementById('link').value;
+
+        // Create suggestion object
+        var suggestion = {
+            name: name,
+            game: game,
+            link: link
+        };
+
+        // Save suggestion to suggest.json
+        var existingData = [];
+        try {
+            existingData = JSON.parse(localStorage.getItem('suggestions')) || [];
+        } catch (error) {
+            console.error('Error parsing existing data:', error);
+        }
+
+        existingData.push(suggestion);
+
+        try {
+            localStorage.setItem('suggestions', JSON.stringify(existingData));
+            alert('Suggestion saved successfully!');
+            // You can replace the alert with any other action, like redirecting to a thank you page.
+        } catch (error) {
+            console.error('Error saving suggestion:', error);
+        }
+    }
+</script>
+
+</body>
+</html>
