@@ -51,13 +51,10 @@
     </style>
   </head>
   <body>
-    <div class="embed-container" id="embed-container">
-        <iframe class="embedlol" id="game-iframe" src="" frameborder="0" width="100%" height="100%"></iframe>
-    </div>
     <div id="content">
     <div class="center">
       <img src="index.png">
-      <button class="floating-button" onclick="showIframe()">URL</button>
+      <button class="floating-button"><a href="unblock/index.html">URL</a></button>
       <p id="random-splash"></p>
       &nbsp
     </div>
@@ -148,20 +145,6 @@
                 })
                 .catch(error => console.error('Error fetching splash.txt:', error));
         });
-          function showIframe() {
-            var code = prompt("Enter URL:");
-
-            if (code) {
-                var iframe = document.getElementById("game-iframe");
-                iframe.src = "" + code;
-
-                var embedContainer = document.getElementById("embed-container");
-                embedContainer.style.display = 'block';
-
-                var mainContent = document.getElementById("content");
-                mainContent.style.display = 'none';
-            }
-        }
     </script>
   </body>
 </html>
