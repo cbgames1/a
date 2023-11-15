@@ -36,52 +36,36 @@
 </head>
 <body>
 
-<form id="suggestionForm">
-    <label for="name">Name <span style="color: gray;">*</span></label>
-    <input type="text" id="name" name="name">
+<form
+  action="https://formspree.io/f/xaygzoqd"
+  method="POST"
+>
+  <label>
+    Your email:
+    <input type="email" name="email">
+  </label>
+  
+  <label>
+    Your message:
+    <textarea name="message"></textarea>
+  </label>
 
-    <label for="game">Game <span style="color: red;">*</span></label>
-    <input type="text" id="game" name="game" required>
+  <label>
+    Name:
+    <input type="text" name="name">
+  </label>
 
-    <label for="link">Link <span style="color: gray;">*</span></label>
-    <input type="url" id="link" name="link">
+  <label>
+    Game:
+    <input type="text" name="game" required>
+  </label>
 
-    <button type="button" onclick="saveSuggestion()">Submit</button>
+  <label>
+    Link:
+    <input type="url" name="link">
+  </label>
+
+  <button type="submit">Send</button>
 </form>
-
-<script>
-    function saveSuggestion() {
-        // Get form values
-        var name = document.getElementById('name').value;
-        var game = document.getElementById('game').value;
-        var link = document.getElementById('link').value;
-
-        // Create suggestion object
-        var suggestion = {
-            name: name,
-            game: game,
-            link: link
-        };
-
-        // Save suggestion to suggest.json
-        var existingData = [];
-        try {
-            existingData = JSON.parse(localStorage.getItem('suggestions')) || [];
-        } catch (error) {
-            console.error('Error parsing existing data:', error);
-        }
-
-        existingData.push(suggestion);
-
-        try {
-            localStorage.setItem('suggestions', JSON.stringify(existingData));
-            alert('Suggestion saved successfully!');
-            // You can replace the alert with any other action, like redirecting to a thank you page.
-        } catch (error) {
-            console.error('Error saving suggestion:', error);
-        }
-    }
-</script>
-
 </body>
 </html>
