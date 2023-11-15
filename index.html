@@ -51,9 +51,13 @@
     </style>
   </head>
   <body>
+    <div class="embed-container" id="embed-container">
+        <iframe class="embedlol" id="game-iframe" src="" frameborder="0" width="100%" height="100%"></iframe>
+    </div>
+    <div id="content">
     <div class="center">
       <img src="index.png">
-      <button class="floating-button" onclick="showIframe()"><a href="updates" class="white">URL</a></button>
+      <button class="floating-button" onclick="showIframe()">URL</button>
       <p id="random-splash"></p>
       &nbsp
     </div>
@@ -130,6 +134,7 @@
         <img src="https://i.ytimg.com/vi/uaGEjrADGPA/maxresdefault.jpg" alt="SOTU2" width="600" height="400">
       </a>
       <div class="desc"><p>Scale Of The Universe 2 <strong style="color: red">[NEW!]</strong></p></div>
+      </div>
     </div>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -153,7 +158,7 @@
                 var embedContainer = document.getElementById("embed-container");
                 embedContainer.style.display = 'block';
 
-                var mainContent = document.getElementById("main-content");
+                var mainContent = document.getElementById("content");
                 mainContent.style.display = 'none';
             }
         }
