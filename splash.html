@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title>splash</title>
+  </head>
+  <body>
+      <p id="random-splash" style="text-align: center; color: white;"></p>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('splash.txt')
+                .then(response => response.text())
+                .then(data => {
+                    const lines = data.split('\n');
+                    const randomLine = lines[Math.floor(Math.random() * lines.length)];
+                    const randomSplashElement = document.getElementById('random-splash');
+                    randomSplashElement.textContent = randomLine;
+                })
+                .catch(error => console.error('Error fetching splash.txt:', error));
+        });
+    </script>
+  </body>
+</html>
