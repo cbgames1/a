@@ -2,8 +2,15 @@
   <head>
     <title>CBgames</title>
     <link rel="icon" type="image/png" href="/img/icon.png">
-    <script src="snowstorm.js"></script>
-    <script src="christmaslights.js"></script>
+<!-- Copy the <script> tag into your own page(s) for the snow effect. That is all! (No CSS etc. is needed) -->
+<script src="snowstorm.js"></script>
+
+<!-- for the Snowstorm homepage, allow the demo to run on iPhone and mobile devices. -->
+<script>snowStorm.excludeMobile = false;</script>
+
+<!-- bonus christmas light stuff, not required for snowstorm -->
+<script src="http://yui.yahooapis.com/combo?2.6.0/build/yahoo-dom-event/yahoo-dom-event.js&2.6.0/build/animation/animation-min.js"></script>
+<script src="christmaslights.js"></script>
     <style>
       .floating-right {
         position: fixed;
@@ -67,6 +74,9 @@
       <button class="floating-right"><a href="suggest.html">Suggest</a></button>
       <p id="random-splash"></p>
       &nbsp
+    </div>
+    <div id="lights">
+       <!-- lights go here -->
     </div>
     &nbsp
     <div class="gallery">
