@@ -1,0 +1,158 @@
+<html>
+  <head>
+    <title>CBgames</title>
+    <link rel="icon" type="image/png" href="/img/icon.png">
+    <style>
+      .floating-right {
+        position: fixed;
+        top: 15px;
+        right: 15px;
+        z-index: 9999;
+        background-color: #0c0f13;
+      }
+      .floating-left {
+        position: fixed;
+        top: 15px;
+        left: 15px;
+        z-index: 9999;
+        background-color: #0c0f13;
+      }
+      .white {
+        color: white;
+      }
+      body {
+        background-color: #0d1117;
+      }
+      .center {
+        text-align: center;
+        background-color: #161b22;
+        border-radius: 10px;
+      }
+      p {
+        color: white;
+        font-family: 'Segoe UI', sans-serif;
+      }
+      div.gallery {
+        margin: 5px;
+        background-color: #161b22;
+        border: 1px solid #161b22;
+        float: left;
+        width: 180px;
+      }
+
+      div.gallery:hover {
+        background-color: #161b22;
+        border: 1px solid #27303c;
+      }
+
+      div.gallery img {
+        width: 100%;
+        background-color: #161b22;
+        height: auto;
+      }
+
+      div.desc {
+        padding: 15px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="content">
+    <div class="center">
+      <img src="index.png">
+      <button class="floating-left"><a href="url.html">URL</a></button>
+      <button class="floating-right"><a href="suggest.html">Suggest</a></button>
+      <p id="random-splash"></p>
+      &nbsp
+    </div>
+    &nbsp
+    <div class="gallery">
+      <a target="_blank" href="fancade/index.html">
+        <img src="fancade/thumbnail.webp" alt="Fancade" width="600" height="400">
+      </a>
+      <div class="desc"><p>Fancade</p></div>
+    </div>
+
+    <div class="gallery">
+      <a target="_blank" href="fnaw/index.html">
+        <img src="fnaw/thumbnail.jpg" alt=":)" width="600" height="400">
+      </a>
+      <div class="desc"><p>FNAW</p></div>
+    </div>
+
+    <div class="gallery">
+      <a target="_blank" href="gamegame/index.html">
+        <img src="https://game-game.com/ui/img/logo.svg" alt="Game-Game" width="600" height="400">
+      </a>
+      <div class="desc"><p>Game-Game</p></div>
+    </div>
+
+    <div class="gallery">
+      <a target="_blank" href="gamesfrog/index.html">
+        <img src="gamesfrog/thumbnail.png" alt="GAMESFROG" width="600" height="400">
+      </a>
+      <div class="desc"><p>Gamesfrog</p></div>
+    </div>
+
+    <div class="gallery">
+      <a target="_blank" href="internetarcade/index.html">
+        <img src="internetarcade/thumbnail.jpg" alt="INTERNET ARCHIVE" width="600" height="400">
+      </a>
+      <div class="desc"><p>Internet Arcade</p></div>
+    </div>
+    
+    <div class="gallery">
+      <a target="_blank" href="zombs/index.html">
+        <img src="zombs/thumbnails.avif" alt="ZOMBS ROYALE" width="600" height="400">
+      </a>
+      <div class="desc"><p>Zombs Royale</p></div>
+    </div>
+
+    <div class="gallery">
+      <a target="_blank" href="retrobowl/index.html">
+        <img src="retrobowl/thumbnail.webp" alt="RETRO BOWL" width="600" height="400">
+      </a>
+      <div class="desc"><p>Retro Bowl</p></div>
+    </div>
+    <div class="gallery">
+      <a target="_blank" href="neal/index.html">
+        <img src="neal/thumbnail.svg" alt="NEAL FUN" width="600" height="400">
+      </a>
+      <div class="desc"><p>NEAL.FUN <strong style="color: red">[NEW!]</strong></p></div>
+    </div>
+    <div class="gallery">
+      <a target="_blank" href="scratch/paperMC/index.html">
+        <img src="https://images.crazygames.com/games/paper-minecraft/cover-1655211126030.png?auto=format%2Ccompress&q=45&cs=strip&ch=DPR&w=1200&h=630&fit=crop" alt="PAPER MINECRAFT" width="600" height="400">
+      </a>
+      <div class="desc"><p>Paper Minecraft <strong style="color: red">[NEW!]</strong></p></div>
+    </div>
+    </div>
+    <div class="gallery">
+      <a target="_blank" href="scratch/gd/index.html">
+        <img src="https://play-lh.googleusercontent.com/sq0hNhqNiuA6j0JW5nMOQCv_wJ6XBq1KpeMNkPN6TsGrrYNsaPrfZ-GiOkk1ap4SqBDA=w526-h296-rw" alt="GEOMOTRY DASH" width="600" height="400">
+      </a>
+      <div class="desc"><p>Geometry Dash <strong style="color: red">[NEW!]</strong></p></div>
+    </div>
+        <div class="gallery">
+      <a target="_blank" href="sotu2/game.html">
+        <img src="https://i.ytimg.com/vi/uaGEjrADGPA/maxresdefault.jpg" alt="SOTU2" width="600" height="400">
+      </a>
+      <div class="desc"><p>Scale Of The Universe 2 <strong style="color: red">[NEW!]</strong></p></div>
+      </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('splash.txt')
+                .then(response => response.text())
+                .then(data => {
+                    const lines = data.split('\n');
+                    const randomLine = lines[Math.floor(Math.random() * lines.length)];
+                    const randomSplashElement = document.getElementById('random-splash');
+                    randomSplashElement.textContent = randomLine;
+                })
+                .catch(error => console.error('Error fetching splash.txt:', error));
+        });
+    </script>
+  </body>
+</html>
